@@ -1,0 +1,130 @@
+{
+    "body": [
+        {
+            "Matière": "Anglais professionnel",
+            "Intervenant": "M. RAULIN",
+            "Coef.": "2.00",
+            "ECTS": "2.00",
+            "CC1": "10",
+            "CC2": "",
+            "Exam": "12"
+        },
+        {
+            "Matière": "S1 - Algorithmique avancée : listes, tris et arbres",
+            "Intervenant": "M. RAYNAL",
+            "Coef.": "3.00",
+            "ECTS": "3.00",
+            "CC1": "1,5",
+            "CC2": "17",
+            "Exam": "5,5"
+        },
+        {
+            "Matière": "S1 - C et algorithmes (challenge)",
+            "Intervenant": "M. BRAY",
+            "Coef.": "3.00",
+            "ECTS": "3.00",
+            "CC1": "12",
+            "CC2": "",
+            "Exam": "12"
+        },
+        {
+            "Matière": "S1 - Conception de bases de données relationnelles",
+            "Intervenant": "M. LEBCIR",
+            "Coef.": "2.00",
+            "ECTS": "2.00",
+            "CC1": "13",
+            "CC2": "",
+            "Exam": "14"
+        },
+        {
+            "Matière": "S1 - conception et modélisation 3d",
+            "Intervenant": "M. PERSIA",
+            "Coef.": "2.00",
+            "ECTS": "2.00",
+            "CC1": "",
+            "CC2": "",
+            "Exam": "10,5"
+        },
+        {
+            "Matière": "S1 - Design thinking",
+            "Intervenant": "Mme VILLARET",
+            "Coef.": "2.00",
+            "ECTS": "2.00",
+            "CC1": "13",
+            "CC2": "15,5",
+            "Exam": "17"
+        },
+        {
+            "Matière": "S1 - e-learning (foad) : langues & culture d'entreprise",
+            "Intervenant": "Mme PLATON",
+            "Coef.": "1.00",
+            "ECTS": "1.00",
+            "CC1": "",
+            "CC2": "",
+            "Exam": "20"
+        },
+        {
+            "Matière": "S1 - Ia",
+            "Intervenant": "M. JUMELLE",
+            "Coef.": "3.00",
+            "ECTS": "3.00",
+            "CC1": "15",
+            "CC2": "",
+            "Exam": "4,5"
+        },
+        {
+            "Matière": "S1 - Langage Java avancé : POO, lambda, flux, FXML",
+            "Intervenant": "Mme LAMBERT",
+            "Coef.": "3.00",
+            "ECTS": "3.00",
+            "CC1": "8,5",
+            "CC2": "11,5",
+            "Exam": "15"
+        },
+        {
+            "Matière": "S1 - open",
+            "Intervenant": "Mme PLATON",
+            "Coef.": "N.C",
+            "ECTS": "2.00",
+            "CC1": "",
+            "CC2": "",
+            "Exam": "18"
+        },
+        {
+            "Matière": "S1 - Outils de développement et conteneurisation",
+            "Intervenant": "M. DOMINGUES",
+            "Coef.": "2.00",
+            "ECTS": "2.00",
+            "CC1": "10",
+            "CC2": "12",
+            "Exam": "13,5"
+        },
+        {
+            "Matière": "S1 - Projet Annuel",
+            "Intervenant": "M. SANANES",
+            "Coef.": "N.C",
+            "ECTS": "N.C",
+            "CC1": "",
+            "CC2": "",
+            "Exam": ""
+        },
+        {
+            "Matière": "S1 - Tests Unitaires",
+            "Intervenant": "M. SOUPHRON",
+            "Coef.": "2.00",
+            "ECTS": "2.00",
+            "CC1": "14",
+            "CC2": "",
+            "Exam": "13"
+        },
+        {
+            "Matière": "S1 - Théorie des langages et compilation",
+            "Intervenant": "M. BAUDOIN",
+            "Coef.": "3.00",
+            "ECTS": "3.00",
+            "CC1": "3",
+            "CC2": "",
+            "Exam": "12"
+        }
+    ]
+}
