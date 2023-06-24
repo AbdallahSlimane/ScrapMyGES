@@ -1,6 +1,6 @@
 {
     "Semaine Courante": "19 juin - 25 juin 2023",
-    "Dernière mise à jour": "Mise à jour le : 22 juin 2023 à 19:13",
+    "Dernière mise à jour": "Mise à jour le : 24 juin 2023 à 20:12",
     "Jour": [
         " ",
         "Lun. 19/06/23",
@@ -12,76 +12,102 @@
         "Dim. 25/06/23",
         ""
     ],
-    "Heure": [
-        "Lun. 19/06/23",
-        "07:00",
-        " ",
-        "08:00",
-        " ",
-        "09:00",
-        " ",
-        "10:00",
-        " ",
-        "11:00",
-        " ",
-        "12:00",
-        " ",
-        "13:00",
-        " ",
-        "14:00",
-        " ",
-        "15:00",
-        " ",
-        "16:00",
-        " ",
-        "17:00",
-        " ",
-        "18:00",
-        " ",
-        "19:00",
-        " ",
-        "20:00",
-        " ",
-        "21:00",
-        " ",
-        "22:00",
-        " ",
-        "23:00",
-        " ",
-        "Mar. 20/06/23",
-        "07:00",
-        " ",
-        "08:00",
-        " ",
-        "09:00",
-        " ",
-        "10:00",
-        " ",
-        "11:00",
-        " ",
-        "12:00",
-        " ",
-        "13:00",
-        " ",
-        "14:00",
-        " ",
-        "15:00",
-        " ",
-        "16:00",
-        " ",
-        "17:00",
-        " ",
-        "18:00",
-        " ",
-        "19:00",
-        " ",
-        "20:00",
-        " ",
-        "21:00",
-        " ",
-        "22:00",
-        " ",
-        "23:00",
-        " "
+    "Evenements": [
+        {
+            "Heures": "09:45 - 11:15",
+            "Cours": "S2 - tests lo... A01"
+        },
+        {
+            "Heures": "11:30 - 13:00",
+            "Cours": "S2 - tests lo... A01"
+        },
+        {
+            "Heures": "14:00 - 15:30",
+            "Cours": "S2 - anglais... B22"
+        },
+        {
+            "Heures": "15:45 - 17:15",
+            "Cours": "S2 - anglais... B22"
+        },
+        {
+            "Heures": "09:45 - 11:15",
+            "Cours": "S2 - bases de..."
+        },
+        {
+            "Heures": "11:30 - 13:00",
+            "Cours": "S2 - bases de..."
+        },
+        {
+            "Heures": "14:00 - 15:30",
+            "Cours": "S2 - scriptin... A04"
+        },
+        {
+            "Heures": "15:45 - 17:15",
+            "Cours": "S2 - scriptin... A04"
+        },
+        {
+            "Heures": "13:00 - 14:00",
+            "Cours": "Comité Pédago... A22"
+        },
+        {
+            "Heures": "08:00 - 09:30",
+            "Cours": "S2 - développ... Salle 03"
+        },
+        {
+            "Heures": "09:45 - 11:15",
+            "Cours": "S2 - développ... Salle 03"
+        },
+        {
+            "Heures": "11:30 - 13:00",
+            "Cours": "S2 - développ... Salle 03"
+        },
+        {
+            "Heures": "14:00 - 15:30",
+            "Cours": "S2 - scriptin... Salle 03"
+        },
+        {
+            "Heures": "15:45 - 17:15",
+            "Cours": "S2 - scriptin... Salle 03"
+        },
+        {
+            "Heures": "17:30 - 19:00",
+            "Cours": "S2 - scriptin... Salle 03"
+        },
+        {
+            "Heures": "15:45 - 19:00",
+            "Cours": "S2 - api avec... Salle 13"
+        },
+        {
+            "Heures": "08:00 - 09:30",
+            "Cours": "S2 - développ... Salle 01"
+        },
+        {
+            "Heures": "09:45 - 11:15",
+            "Cours": "S2 - développ... Salle 01"
+        },
+        {
+            "Heures": "11:30 - 13:00",
+            "Cours": "S2 - linux or... Salle 01"
+        },
+        {
+            "Heures": "14:00 - 15:30",
+            "Cours": "S2 - linux or... Salle 01"
+        },
+        {
+            "Heures": "09:45 - 11:15",
+            "Cours": "S2 - scriptin... B11"
+        },
+        {
+            "Heures": "11:30 - 13:00",
+            "Cours": "S2 - scriptin... B11"
+        },
+        {
+            "Heures": "15:45 - 17:15",
+            "Cours": "S2 - bases de..."
+        },
+        {
+            "Heures": "17:30 - 19:00",
+            "Cours": "S2 - bases de..."
+        }
     ]
 }
