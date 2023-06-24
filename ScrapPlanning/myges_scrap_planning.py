@@ -33,7 +33,7 @@ class MyGesScrapPlanning:
             WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".fc-event-inner")))
             event_elements = self.driver.find_elements(By.CSS_SELECTOR, ".fc-event-inner")
         except TimeoutException:
-            print("No events found after waiting for 10 seconds.")
+            print("No events found")
             return []
 
         events = []
@@ -65,7 +65,7 @@ class MyGesScrapPlanning:
             "Semaine Courante": current_week_text,
             "Dernière mise à jour": last_update_text,
             "Jour": header_text,
-            "Evenements": events,
+            "Évènements": events,
         }
 
         print(data)
