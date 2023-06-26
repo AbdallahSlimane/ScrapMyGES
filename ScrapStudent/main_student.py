@@ -4,7 +4,7 @@ from myges_scrap_student import MyGesScrapStudent
 
 
 def main():
-    scraper = MyGesScrapStudent("aslimane1", "Hajar77176")
+    scraper = MyGesScrapStudent("username", "password")
     scraper.login()
     scraper.scrape_student()
 

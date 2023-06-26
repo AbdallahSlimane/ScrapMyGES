@@ -4,7 +4,7 @@ from myges_scrap_marks import MyGesScrapMarks
 
 
 def main():
-    scraper = MyGesScrapMarks("aslimane1", "Hajar77176")
+    scraper = MyGesScrapMarks("username", "password")
     scraper.login()
     scraper.scrape_and_save_marks_for_specific_semesters()
     scraper.close()

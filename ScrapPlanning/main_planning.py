@@ -4,7 +4,7 @@ from myges_scrap_planning import MyGesScrapPlanning
 
 
 def main():
-    scraper = MyGesScrapPlanning("aslimane1", "Hajar77176")
+    scraper = MyGesScrapPlanning("username", "password")
     scraper.login()
     scraper.navigate_to_planning()
     scraper.scrape_planning()
