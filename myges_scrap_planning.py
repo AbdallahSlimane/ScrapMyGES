@@ -70,12 +70,13 @@ class MyGesScrapPlanning:
 
         print(data)
 
-        with open('planning.json', 'w', encoding='utf-8') as f:
+        with open('ScrapPlanning/planning.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
         time.sleep(5)
 
         print("Data saved to planning.json")
         time.sleep(5)
+        return data
 
     def next_week(self):
         next_week_button = self.driver.find_element(By.ID, "calendar:nextMonth")

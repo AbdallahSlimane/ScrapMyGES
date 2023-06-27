@@ -70,15 +70,16 @@ class MyGesScrapMarks:
 
         self.change_semester("2022-2023 - ESGI - 3ESGI  - Semestre 1")
         marks_semester_1 = self.scrape_marks()
-        with open(f'marks_semester_1.json', 'w', encoding='utf-8') as f:
+        with open(f'ScrapMark/marks_semester_1.json', 'w', encoding='utf-8') as f:
             json.dump(marks_semester_1, f, indent=4, ensure_ascii=False)
 
-        self.change_semester("2022-2023 - ESGI - 3ESGI  - Semestre 2")
-        marks_semester_2 = self.scrape_marks()
-        with open(f'marks_semester_2.json', 'w', encoding='utf-8') as f:
-            json.dump(marks_semester_2, f, indent=4, ensure_ascii=False)
+        # self.change_semester("2022-2023 - ESGI - 3ESGI  - Semestre 2")
+        # marks_semester_2 = self.scrape_marks()
+        # with open(f'ScrapMark/marks_semester_2.json', 'w', encoding='utf-8') as f:
+            # json.dump(marks_semester_2, f, indent=4, ensure_ascii=False)
 
         print("Data saved to marks_semester_1.json and marks_semester_2.json")
+        return marks_semester_1
 
     def close(self):
         self.driver.quit()
