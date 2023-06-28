@@ -8,20 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class MyGesScrapMarks:
-    def __init__(self, identifier, password):
+    def __init__(self):
         self.driver = webdriver.Chrome()
-        self.identifier = identifier
-        self.password = password
-
-    def login(self):
-        self.driver.get("https://myges.fr/login")
-        time.sleep(2)
-        identifier_box = self.driver.find_element(By.ID, "username")
-        identifier_box.send_keys(self.identifier)
-        password_box = self.driver.find_element(By.ID, "password")
-        password_box.send_keys(self.password)
-        password_box.send_keys(Keys.RETURN)
-        time.sleep(2)
 
     def scrape_marks(self):
         WebDriverWait(self.driver, 10).until(
