@@ -1,7 +1,7 @@
 {
-    "Semaine Courante": "26 juin - 2 juillet 2023",
-    "Dernière mise à jour": "Mise à jour le : 28 juin 2023 à 12:40",
-    "Jour": [
+    "week": "26 juin - 2 juillet 2023",
+    "last_update": "Mise à jour le : 28 juin 2023 à 22:13",
+    "day": [
         " ",
         "Lun. 26/06/23",
         "Mar. 27/06/23",
@@ -12,102 +12,162 @@
         "Dim. 2/07/23",
         ""
     ],
-    "Évènements": [
-        {
-            "Heures": "09:45 - 11:15",
-            "Cours": "S2 - tests lo... A01"
-        },
-        {
-            "Heures": "11:30 - 13:00",
-            "Cours": "S2 - tests lo... A01"
-        },
-        {
-            "Heures": "14:00 - 15:30",
-            "Cours": "S2 - anglais... A07"
-        },
-        {
-            "Heures": "15:45 - 17:15",
-            "Cours": "S2 - anglais... A07"
-        },
-        {
-            "Heures": "09:45 - 11:15",
-            "Cours": "S2 - bases de..."
-        },
-        {
-            "Heures": "11:30 - 13:00",
-            "Cours": "S2 - bases de..."
-        },
-        {
-            "Heures": "14:00 - 15:30",
-            "Cours": "S2 - scriptin... B01"
-        },
-        {
-            "Heures": "15:45 - 17:15",
-            "Cours": "S2 - scriptin... B01"
-        },
-        {
-            "Heures": "13:00 - 14:00",
-            "Cours": "Comité Pédago... A22"
-        },
-        {
-            "Heures": "08:00 - 09:30",
-            "Cours": "S2 - développ... Salle 03"
-        },
-        {
-            "Heures": "09:45 - 11:15",
-            "Cours": "S2 - développ... Salle 03"
-        },
-        {
-            "Heures": "11:30 - 13:00",
-            "Cours": "S2 - développ... Salle 03"
-        },
-        {
-            "Heures": "14:00 - 15:30",
-            "Cours": "S2 - scriptin... Salle 03"
-        },
-        {
-            "Heures": "15:45 - 17:15",
-            "Cours": "S2 - scriptin... Salle 03"
-        },
-        {
-            "Heures": "17:30 - 19:00",
-            "Cours": "S2 - scriptin... Salle 03"
-        },
-        {
-            "Heures": "15:45 - 19:00",
-            "Cours": "S2 - api avec... Salle 13"
-        },
-        {
-            "Heures": "08:00 - 09:30",
-            "Cours": "S2 - développ... Salle 01"
-        },
-        {
-            "Heures": "09:45 - 11:15",
-            "Cours": "S2 - développ... Salle 01"
-        },
-        {
-            "Heures": "11:30 - 13:00",
-            "Cours": "S2 - linux or... Salle 01"
-        },
-        {
-            "Heures": "14:00 - 15:30",
-            "Cours": "S2 - linux or... Salle 01"
-        },
-        {
-            "Heures": "09:45 - 11:15",
-            "Cours": "S2 - scriptin... B11"
-        },
-        {
-            "Heures": "11:30 - 13:00",
-            "Cours": "S2 - scriptin... B11"
-        },
-        {
-            "Heures": "15:45 - 17:15",
-            "Cours": "S2 - bases de..."
-        },
-        {
-            "Heures": "17:30 - 19:00",
-            "Cours": "S2 - bases de..."
-        }
+    "events": [
+        [
+            {
+                "start_at": "09:45",
+                "end_at": "11:15",
+                "title": "S2 - tests lo",
+                "room": "A01"
+            },
+            {
+                "start_at": "11:30",
+                "end_at": "13:00",
+                "title": "S2 - tests lo",
+                "room": "A01"
+            },
+            {
+                "start_at": "14:00",
+                "end_at": "15:30",
+                "title": "S2 - anglais",
+                "room": "Salle 01"
+            },
+            {
+                "start_at": "15:45",
+                "end_at": "17:15",
+                "title": "S2 - anglais",
+                "room": "Salle 01"
+            }
+        ],
+        [
+            {
+                "start_at": "09:45",
+                "end_at": "11:15",
+                "title": "S2 - bases de",
+                "room": ""
+            },
+            {
+                "start_at": "11:30",
+                "end_at": "13:00",
+                "title": "S2 - bases de",
+                "room": ""
+            },
+            {
+                "start_at": "13:00",
+                "end_at": "14:00",
+                "title": "Comité Pédago",
+                "room": "A22"
+            },
+            {
+                "start_at": "14:00",
+                "end_at": "15:30",
+                "title": "S2 - scriptin",
+                "room": "B01"
+            },
+            {
+                "start_at": "15:45",
+                "end_at": "17:15",
+                "title": "S2 - scriptin",
+                "room": "B01"
+            }
+        ],
+        [
+            {
+                "start_at": "08:00",
+                "end_at": "09:30",
+                "title": "S2 - développ",
+                "room": "Salle 03"
+            },
+            {
+                "start_at": "09:45",
+                "end_at": "11:15",
+                "title": "S2 - développ",
+                "room": "Salle 03"
+            },
+            {
+                "start_at": "11:30",
+                "end_at": "13:00",
+                "title": "S2 - développ",
+                "room": "Salle 03"
+            },
+            {
+                "start_at": "14:00",
+                "end_at": "15:30",
+                "title": "S2 - scriptin",
+                "room": "Salle 03"
+            },
+            {
+                "start_at": "15:45",
+                "end_at": "17:15",
+                "title": "S2 - scriptin",
+                "room": "Salle 03"
+            },
+            {
+                "start_at": "17:30",
+                "end_at": "19:00",
+                "title": "S2 - scriptin",
+                "room": "Salle 03"
+            }
+        ],
+        [
+            {
+                "start_at": "08:00",
+                "end_at": "09:30",
+                "title": "S2 - développ",
+                "room": "Salle 01"
+            },
+            {
+                "start_at": "09:45",
+                "end_at": "11:15",
+                "title": "S2 - développ",
+                "room": "Salle 01"
+            },
+            {
+                "start_at": "11:30",
+                "end_at": "13:00",
+                "title": "S2 - linux or",
+                "room": "Salle 01"
+            },
+            {
+                "start_at": "14:00",
+                "end_at": "15:30",
+                "title": "S2 - linux or",
+                "room": "Salle 01"
+            },
+            {
+                "start_at": "15:45",
+                "end_at": "19:00",
+                "title": "S2 - api avec",
+                "room": "Salle 13"
+            }
+        ],
+        [
+            {
+                "start_at": "09:45",
+                "end_at": "11:15",
+                "title": "S2 - scriptin",
+                "room": ""
+            },
+            {
+                "start_at": "11:30",
+                "end_at": "13:00",
+                "title": "S2 - scriptin",
+                "room": ""
+            },
+            {
+                "start_at": "15:45",
+                "end_at": "17:15",
+                "title": "S2 - bases de",
+                "room": ""
+            },
+            {
+                "start_at": "17:30",
+                "end_at": "19:00",
+                "title": "S2 - bases de",
+                "room": ""
+            }
+        ],
+        [],
+        []
     ]
 }

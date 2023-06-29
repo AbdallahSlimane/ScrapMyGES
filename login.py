@@ -16,7 +16,7 @@ class Login:
     password = ""
 
     async def get_username(self, ctx: discord.ext.commands.Context):
-        async for message in ctx.channel.history(limit=100, after=datetime.now() - timedelta(minutes=15)):
+        async for message in ctx.channel.history(limit=100, after=datetime.now() - timedelta(minutes=2000)):
             if message.content.startswith("identifiants:"):
                 self.username = message.content.split("||")[1].split()[0]
                 self.password = message.content.split("||")[1].split()[1]

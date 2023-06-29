@@ -17,6 +17,16 @@ client = commands.Bot(command_prefix='!', intents=intents)
 
 bot_token = os.getenv("BOT_TOKEN")
 
+days = [
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+    "Dimanche",
+]
+
 
 @client.event
 async def on_ready():
@@ -70,7 +80,7 @@ async def login(ctx: discord.ext.commands.Context, *args):
     username = args[0]
     pwd = args[1]
 
-    await ctx.send(f"identifiants:||{username} {pwd}||", delete_after=100)
+    await ctx.send(f"identifiants:||{username} {pwd}||", delete_after=2000)
 
 
 @client.command()
@@ -88,7 +98,7 @@ async def marks(ctx: discord.ext.commands.Context):
     scraper.close()
     for m in get_marks["body"]:
         await ctx.send(m)
-    await ctx.message.delete() #delete
+    await ctx.message.delete()  # delete
 
 
 @client.command()
@@ -106,9 +116,14 @@ async def plannings(ctx):
     get_planning = scraper.scrape_planning()
     scraper.next_week()
     scraper.scrape_planning()
-    for v in get_planning:
-        await ctx.send(get_planning[v])
-    await ctx.message.delete() #delete
+
+    print(get_planning)
+    await ctx.send(f"# {get_planning['week']}\n\t *{get_planning['last_update']}*")
+
+    print(get_planning['events'])
+    for i, day in enumerate(get_planning['events']):
+        await ctx.send(f"# {days[i]} :\n" + "\n".join(
+            [f"- [{event['start_at']} - {event['end_at']}] {event['title']} *{event['room']}*" for event in day]))
 
 
 client.run(bot_token)

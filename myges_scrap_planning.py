@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class MyGesScrapPlanning:
+    start_planning = "07:00"
+
     def __init__(self):
         self.driver = webdriver.Chrome()
 
@@ -24,14 +26,31 @@ class MyGesScrapPlanning:
             print("No events found")
             return []
 
-        events = []
-        for event in event_elements:
+        events = [[] for _ in range(7)]
+        curr_index = -1
+        last_left = 0.0
+        for i, event in enumerate(event_elements):
             hour = event.find_element(By.CSS_SELECTOR, ".fc-event-time").text.replace('\n', ' ')
             title = event.find_element(By.CSS_SELECTOR, ".fc-event-title").text.replace('\n', ' ')
-            events.append({
-                "Heures": hour,
-                "Cours": title
+
+            elements = self.driver.find_elements(By.CSS_SELECTOR, ".fc-event")
+            if i >= len(elements):
+                continue
+            left = float(elements[i].value_of_css_property("left").replace("px", ""))
+
+            if left != last_left:
+                curr_index += 1
+                last_left = left
+
+            events[curr_index].append({
+                "start_at": hour.split(" - ")[0],
+                "end_at": hour.split(" - ")[1],
+                "title": title.split("...")[0].strip(),
+                "room": title.split("...")[1].strip()
             })
+
+        for sublist in events:
+            sublist.sort(key=lambda x: x["start_at"])
         return events
 
     def scrape_planning(self):
@@ -50,20 +69,16 @@ class MyGesScrapPlanning:
         events = self.scrape_event_details()
 
         data = {
-            "Semaine Courante": current_week_text,
-            "Dernière mise à jour": last_update_text,
-            "Jour": header_text,
-            "Évènements": events,
+            "week": current_week_text,
+            "last_update": last_update_text,
+            "day": header_text,
+            "events": events,
         }
-
-        print(data)
 
         with open('ScrapPlanning/planning.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
-        time.sleep(5)
 
         print("Data saved to planning.json")
-        time.sleep(5)
         return data
 
     def next_week(self):

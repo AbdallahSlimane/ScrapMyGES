@@ -2,12 +2,12 @@
     "body": [
         {
             "Matière": "Anglais professionnel",
-            "Intervenant": "M. WEBER",
+            "Intervenant": "Mme DUPONT",
             "Coef.": "2.00",
             "ECTS": "2.00",
             "CC1": "12",
             "CC2": "",
-            "Exam": "11,5"
+            "Exam": "10"
         },
         {
             "Matière": "S1 - accessibilité numérique",
@@ -16,15 +16,15 @@
             "ECTS": "2.00",
             "CC1": "",
             "CC2": "",
-            "Exam": "16,5"
+            "Exam": "14,5"
         },
         {
             "Matière": "S1 - Algorithmique avancée : listes, tris et arbres",
             "Intervenant": "M. RAYNAL",
             "Coef.": "3.00",
             "ECTS": "3.00",
-            "CC1": "20",
-            "CC2": "20",
+            "CC1": "18,5",
+            "CC2": "19",
             "Exam": "15,5"
         },
         {
@@ -32,9 +32,9 @@
             "Intervenant": "M. BRAY",
             "Coef.": "3.00",
             "ECTS": "3.00",
-            "CC1": "12",
+            "CC1": "18,5",
             "CC2": "",
-            "Exam": "12"
+            "Exam": "14"
         },
         {
             "Matière": "S1 - Conception de bases de données relationnelles",
@@ -43,15 +43,15 @@
             "ECTS": "2.00",
             "CC1": "16,5",
             "CC2": "",
-            "Exam": "14"
+            "Exam": "13,5"
         },
         {
             "Matière": "S1 - Design thinking",
             "Intervenant": "Mme VILLARET",
             "Coef.": "2.00",
             "ECTS": "2.00",
-            "CC1": "14,5",
-            "CC2": "17,5",
+            "CC1": "15",
+            "CC2": "18",
             "Exam": "17"
         },
         {
@@ -61,25 +61,25 @@
             "ECTS": "1.00",
             "CC1": "",
             "CC2": "",
-            "Exam": "20"
+            "Exam": "18,5"
         },
         {
             "Matière": "S1 - Ia",
             "Intervenant": "M. JUMELLE",
             "Coef.": "3.00",
             "ECTS": "3.00",
-            "CC1": "18",
+            "CC1": "14",
             "CC2": "",
-            "Exam": "12,5"
+            "Exam": "4,5"
         },
         {
             "Matière": "S1 - Langage Java avancé : POO, lambda, flux, FXML",
             "Intervenant": "Mme LAMBERT",
             "Coef.": "3.00",
             "ECTS": "3.00",
-            "CC1": "13,5",
-            "CC2": "16,5",
-            "Exam": "13,5"
+            "CC1": "11",
+            "CC2": "12",
+            "Exam": "8"
         },
         {
             "Matière": "S1 - open",
@@ -88,16 +88,16 @@
             "ECTS": "2.00",
             "CC1": "",
             "CC2": "",
-            "Exam": "15"
+            "Exam": "14,5"
         },
         {
             "Matière": "S1 - Outils de développement et conteneurisation",
             "Intervenant": "M. DOMINGUES",
             "Coef.": "2.00",
             "ECTS": "2.00",
-            "CC1": "12",
+            "CC1": "8",
             "CC2": "18",
-            "Exam": "16"
+            "Exam": "17,5"
         },
         {
             "Matière": "S1 - Projet Annuel",
@@ -113,18 +113,18 @@
             "Intervenant": "M. SOUPHRON",
             "Coef.": "2.00",
             "ECTS": "2.00",
-            "CC1": "19",
+            "CC1": "7,5",
             "CC2": "",
-            "Exam": "14"
+            "Exam": "13"
         },
         {
             "Matière": "S1 - Théorie des langages et compilation",
             "Intervenant": "M. BAUDOIN",
             "Coef.": "3.00",
             "ECTS": "3.00",
-            "CC1": "12,5",
+            "CC1": "9,5",
             "CC2": "",
-            "Exam": "13"
+            "Exam": "12"
         }
     ]
 }
