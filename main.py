@@ -1,13 +1,12 @@
 import os
-import discord
 
-from bot_answers import Answer
 from discord.ext import commands
 from dotenv import load_dotenv
 
+from bot_answers import Answer
+from login import *
 from myges_scrap_marks import *
 from myges_scrap_planning import *
-from login import *
 
 load_dotenv()
 
@@ -53,13 +52,12 @@ async def my(ctx: discord.ext.commands.Context):
         name = author.name.lower().replace(" ", "_")
         channel = await guild.create_text_channel(name, overwrites=overwrites)
         await channel.set_permissions(ctx.author, read_messages=True, send_messages=True)
-        await channel.send("# Discord ne demandera jamais vos identifiants MYGES !")
-        await channel.send(
-            "## Pour vous connectez, saisissez: \n!login *identifiant* *mot de passe*\n*> Vous aurez accès au bot pendant 5 min*")
+        await channel.send(Answer.CMD_MY_Id.value)
+        await channel.send(Answer.CMD_MY_TUTO.value)
     else:
-        await ctx.send("Vous n'avez pas les autorisations nécessaires pour créer des canaux.")
+        await ctx.send(Answer.CMD_NOT_AUTHORIZED.value)
 
-    await ctx.send("OK")
+    await ctx.send(Answer.OK.value)
 
 
 @client.command()
@@ -69,46 +67,58 @@ async def login(ctx: discord.ext.commands.Context, *args):
     if author.name.lower().replace(" ", "_") != ctx.channel.name:
         print(author.name, ctx.channel.name)
         await ctx.message.delete()  # delete
-        await ctx.send("## Vous ne pouvez pas executer cette commande dans ce channel", delete_after=5)
+        await ctx.send(Answer.CMD_CANNOT_EXEC.value, delete_after=5)
         return
 
     if len(args) != 2:
         await ctx.message.delete()  # delete
-        await ctx.send("## Vous devez renseigner 2 paramètres", delete_after=5)
+        await ctx.send(Answer.CMD_WARNING_PARAM.value, delete_after=5)
         return
 
     username = args[0]
     pwd = args[1]
 
-    await ctx.send(f"identifiants:||{username} {pwd}||", delete_after=2000)
+    await ctx.send(f"identifiants:||{username} {pwd}||", delete_after=3*60)
 
 
 @client.command()
 async def marks(ctx: discord.ext.commands.Context):
-    user_login = Login()
-    await user_login.get_username(ctx)
-    if user_login.is_empty():
-        await ctx.message.delete()  # delete
-        await ctx.send("Vous devez vous connecter avant de poursuivre", delete_after=5)
-        return
+    user_login = await checks_login(ctx)
 
     scraper = MyGesScrapMarks()
     user_login.login(scraper.driver)
-    get_marks = scraper.scrape_and_save_marks_for_specific_semesters()
+    scraper.scrape_and_save_marks_for_specific_semesters()
     scraper.close()
-    for m in get_marks["body"]:
-        await ctx.send(m)
+
+    with open(f'ScrapMark/marks_semester_1.json', 'r', encoding='utf-8') as f:
+        semester1 = json.load(f)
+        await send_marks(semester1, ctx)
+        await ctx.send(f"# Notes Semestre 1")
+
+    with open(f'ScrapMark/marks_semester_2.json', 'r', encoding='utf-8') as f:
+        semester2 = json.load(f)
+        await ctx.send(f"# Notes Semestre 2")
+        await send_marks(semester2, ctx)
+
     await ctx.message.delete()  # delete
+
+
+async def send_marks(all_marks, ctx: discord.ext.commands.Context):
+    for m in all_marks["body"]:
+        await ctx.send(
+            f"## Matière: {m['Matière']} :\n"
+            f"- {m['Intervenant']}\n"
+            f"- Coef: {m['Coef.']}\n"
+            f"- ECTS: {m['ECTS']}\n"
+            f"- CC1: {m['CC1']}\n"
+            f"- CC2: {m['CC2']}\n"
+            f"- Exam: {m['Exam']}"
+        )
 
 
 @client.command()
 async def plannings(ctx):
-    user_login = Login()
-    await user_login.get_username(ctx)
-    if user_login.is_empty():
-        await ctx.message.delete()  # delete
-        await ctx.send("Vous devez vous connecter avant de poursuivre", delete_after=5)
-        return
+    user_login = await checks_login(ctx)
 
     scraper = MyGesScrapPlanning()
     user_login.login(scraper.driver)
@@ -117,13 +127,21 @@ async def plannings(ctx):
     scraper.next_week()
     scraper.scrape_planning()
 
-    print(get_planning)
     await ctx.send(f"# {get_planning['week']}\n\t *{get_planning['last_update']}*")
-
-    print(get_planning['events'])
     for i, day in enumerate(get_planning['events']):
         await ctx.send(f"# {days[i]} :\n" + "\n".join(
             [f"- [{event['start_at']} - {event['end_at']}] {event['title']} *{event['room']}*" for event in day]))
+
+
+async def checks_login(ctx):
+    user_login = Login()
+    await user_login.get_username(ctx)
+    if user_login.is_empty():
+        await ctx.message.delete()  # delete
+        await ctx.send(Answer.CMD_MUST_CONNECT_BEFORE.value, delete_after=5)
+        return
+    else:
+        return user_login
 
 
 client.run(bot_token)
