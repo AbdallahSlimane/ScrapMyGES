@@ -1,18 +1,19 @@
 import json
+import time
+
 from selenium import webdriver
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import time
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class MyGesScrapPlanning:
-    start_planning = "07:00"
 
     def __init__(self):
         self.driver = webdriver.Chrome()
+
+    start_planning = "07:00"
 
     def navigate_to_planning(self):
         self.driver.get("https://myges.fr/student/planning-calendar")
@@ -53,7 +54,7 @@ class MyGesScrapPlanning:
             sublist.sort(key=lambda x: x["start_at"])
         return events
 
-    def scrape_planning(self):
+    def scrape_planning(self, path):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'calendar:currentWeek')))
         current_week_element = self.driver.find_element(By.ID, 'calendar:currentWeek')
         current_week_text = current_week_element.text.replace('\n', ' ')
@@ -75,10 +76,9 @@ class MyGesScrapPlanning:
             "events": events,
         }
 
-        with open('ScrapPlanning/planning.json', 'w', encoding='utf-8') as f:
+        with open(path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
 
-        print("Data saved to planning.json")
         return data
 
     def next_week(self):

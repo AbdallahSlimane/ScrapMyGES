@@ -1,10 +1,10 @@
 import json
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import time
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class MyGesScrapMarks:
@@ -52,21 +52,19 @@ class MyGesScrapMarks:
                 break
         time.sleep(5)
 
-    def scrape_and_save_marks_for_specific_semesters(self):
+    def scrape_and_save_marks_for_specific_semesters(self, path, path2):
         self.driver.get("https://myges.fr/student/marks")
         time.sleep(2)
 
         self.change_semester("2022-2023 - ESGI - 3ESGI  - Semestre 1")
         marks_semester_1 = self.scrape_marks()
-        with open(f'ScrapMark/marks_semester_1.json', 'w', encoding='utf-8') as f:
+        with open(path, 'w', encoding='utf-8') as f:
             json.dump(marks_semester_1, f, indent=4, ensure_ascii=False)
 
         self.change_semester("2022-2023 - ESGI - 3ESGI  - Semestre 2")
         marks_semester_2 = self.scrape_marks()
-        with open(f'ScrapMark/marks_semester_2.json', 'w', encoding='utf-8') as f:
+        with open(path2, 'w', encoding='utf-8') as f:
             json.dump(marks_semester_2, f, indent=4, ensure_ascii=False)
-
-        print("Data saved !")
 
     def close(self):
         self.driver.quit()

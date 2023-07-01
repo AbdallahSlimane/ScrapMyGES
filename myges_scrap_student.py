@@ -1,31 +1,18 @@
 import json
-
-from selenium.common import NoSuchElementException, TimeoutException
-from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
+
+from selenium import webdriver
+from selenium.common import NoSuchElementException, TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class MyGesScrapStudent:
-    def __init__(self, identifier, password):
+    def __init__(self):
         self.driver = webdriver.Chrome()
-        self.identifier = identifier
-        self.password = password
 
-    def login(self):
-        self.driver.get("https://myges.fr/login")
-        time.sleep(2)
-        identifier_box = self.driver.find_element(By.ID, "username")
-        identifier_box.send_keys(self.identifier)
-        password_box = self.driver.find_element(By.ID, "password")
-        password_box.send_keys(self.password)
-        password_box.send_keys(Keys.RETURN)
-        time.sleep(2)
-
-    def scrape_student(self):
+    def scrape_student(self, path):
         self.driver.get("https://myges.fr/student/student-directory")
         time.sleep(5)
 
@@ -56,7 +43,7 @@ class MyGesScrapStudent:
 
         print(data)
 
-        with open('ScrapStudent/students.json', 'w', encoding='utf-8') as f:
+        with open(path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
         time.sleep(5)
 
