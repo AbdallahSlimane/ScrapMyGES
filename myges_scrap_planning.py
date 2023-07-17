@@ -44,10 +44,10 @@ class MyGesScrapPlanning:
                 last_left = left
 
             events[curr_index].append({
-                "start_at": hour.split(" - ")[0],
-                "end_at": hour.split(" - ")[1],
-                "title": title.split("...")[0].strip(),
-                "room": title.split("...")[1].strip()
+                "start_at": hour.split(" - ") if len(hour.split(" - ")) > 0 else "",
+                "end_at": hour.split(" - ")[1] if len(hour.split(" - ")) > 1 else "",
+                "title": title.split("...")[0].strip() if len(title.split("...")) > 0 else "",
+                "room": title.split("...")[1].strip() if len(title.split("...")) > 1 else ""
             })
 
         for sublist in events:
