@@ -14,7 +14,8 @@ class Answer(Enum):
     CMD_NOT_AUTHORIZED = "Vous n'avez pas les autorisations nécessaires pour créer des canaux."
     CMD_CANNOT_EXEC = "## Vous ne pouvez pas executer cette commande dans ce channel"
     CMD_DONE = "Bien t’as tout scrapé bg"
-    CMD_ERROR = "La commande n'existe pas !"
+    CMD_NOT_FOUND = "La commande n'existe pas !"
+    CMD_ERROR = "La commande a rencontré une erreur !"
 
 
 class Filename(Enum):

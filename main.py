@@ -38,12 +38,16 @@ async def on_ready():
 
 @client.event
 async def on_command_error(ctx, error):
-    if isinstance(error, commands.CommandNotFound):
-        await command_not_found(ctx)
+    if isinstance(error, discord.ext.commands.errors.CommandNotFound):
+        await command_not_found(ctx, Answer.CMD_NOT_FOUND.value)
+
+    if isinstance(error, discord.ext.commands.errors.CommandInvokeError):
+        print(type(error), error)
+        await command_not_found(ctx, Answer.CMD_ERROR.value)
 
 
-async def command_not_found(ctx):
-    error_message = Answer.CMD_ERROR.value
+async def command_not_found(ctx, message):
+    error_message = message
     embed = discord.Embed(description=error_message, color=discord.Color.red())
     await ctx.send(embed=embed)
 
